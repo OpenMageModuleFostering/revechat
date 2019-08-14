@@ -9,16 +9,14 @@ if (!isset($revechat_options)){
 <?php if($revechat_options['revechat_aid'] != null){
 
 	?>
- <!-- Start of REVE Chat Script-->
- <script type='text/javascript'>
- window.__revechat_account = window.__revechat_account || {};
- window.__revechat_account = '<?php echo $revechat_options['revechat_aid']; ?>';
- (function() { 
-   var rc = document.createElement('script'); rc.type = 'text/javascript'; rc.async = true;
-   rc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.revechat.com/widget/scripts/new-livechat.js';
-   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(rc, s);
-})();
-</script>
-<!-- End of REVE Chat Script -->
+    <!-- Start of REVE Chat Script-->
+    <script type='text/javascript'>
+        window.$_REVECHAT_API || (function(d, w) { var r = $_REVECHAT_API = function(c) {r._.push(c);}; w.__revechat_account='<?php echo $revechat_options['revechat_aid']; ?>';w.__revechat_version=2;
+            r._= []; var rc = d.createElement('script'); rc.type = 'text/javascript'; rc.async = true; rc.setAttribute('charset', 'utf-8');
+            rc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.revechat.com/widget/scripts/new-livechat.js?'+new Date().getTime();
+            var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(rc, s);
+        })(document, window);
+    </script>
+    <!-- End of REVE Chat Script -->
 
 <?php } ?>

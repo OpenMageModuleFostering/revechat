@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Reve_Revechat>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
         </Reve_Revechat>
     </modules>
     <global>
