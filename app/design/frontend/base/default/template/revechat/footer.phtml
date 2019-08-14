@@ -1,0 +1,36 @@
+<?php
+global $revechat_options;
+if (!isset($revechat_options)){
+	$revechat_model = Mage::getModel('revechat/revechat')->load(1);
+	$revechat_options = $revechat_model->_data;
+}
+?>
+
+<?php if($revechat_options['revechat_aid'] != null &&  $revechat_options['revechat_tracking_id'] !=null){
+
+	?>
+<script type='text/javascript'>  var url = "https://static.revechat.com/client/scripts/configuration.js";
+    var trackingID ="<?php echo $revechat_options['revechat_tracking_id']; ?>"
+    function initializeWidget(){
+        var aid="<?php echo $revechat_options['revechat_aid']; ?>";
+        new ReveChatWidget(aid);
+        var trackingID ="<?php echo $revechat_options['revechat_tracking_id']; ?>";}
+    (function loadSrc(src_url, onload_callback){
+        var script = document.createElement("script");
+        if(script.readyState){
+            script.onreadystatechange = function (){
+                if(script.readyState === "loaded" || script.readyState === "complete"){
+                    script.onreadystatechange = null
+                    onload_callback();}}
+        } else {
+            script.onload = function(){
+                onload_callback();
+            } }
+        script.src = src_url;
+        var first_script = document.getElementsByTagName("script")[0];
+        first_script.parentNode.insertBefore(script, first_script);
+    })(url, initializeWidget);
+    <!-- Add textArea code at every page in your website -->
+</script>
+
+<?php } ?>

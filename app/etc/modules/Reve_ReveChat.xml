@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Reve_ReveChat>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Reve_ReveChat>
+    </modules>
+</config>

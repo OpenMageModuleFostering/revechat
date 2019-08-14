@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Reve_ReveChat>
+            <version>0.1.0</version>
+        </Reve_ReveChat>
+    </modules>
+    <global>
+        <models>
+            <revechat>
+                <class>Reve_ReveChat_Model</class>
+                <resourceModel>revechat_mysql4</resourceModel>
+            </revechat>
+            <revechat_mysql4>
+                <class>Reve_ReveChat_Model_Mysql4</class>
+                <entities>
+                    <revechat>
+                        <table>revechat</table>
+                    </revechat>
+                </entities>
+            </revechat_mysql4>
+        </models>
+        <blocks>
+            <revechat>
+                <class>Reve_ReveChat_Block</class>
+            </revechat>
+        </blocks>
+         <helpers>
+            <revechat><class>Reve_ReveChat_Helper</class></revechat>
+        </helpers>
+        <resources>
+            <revechat_setup>
+                <setup>
+                    <module>Reve_ReveChat</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </revechat_setup>
+            <revechat_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </revechat_write>
+            <revechat_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </revechat_read>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <Reve_ReveChat>
+                <use>standard</use>
+                <args>
+                    <module>Reve_ReveChat</module>
+                    <frontName>revechat</frontName>
+                </args>
+            </Reve_ReveChat>
+        </routers>
+        <layout>
+            <updates>
+                <Reve_ReveChat>
+                    <file>revechat.xml</file>
+                </Reve_ReveChat>
+            </updates>
+        </layout>
+     </frontend>
+    <admin>
+       <routers>
+            <Reve_ReveChat>
+                <use>admin</use>
+                <args>
+                    <module>Reve_ReveChat</module>
+                    <frontName>revechat</frontName>
+                </args>
+            </Reve_ReveChat>
+       </routers>
+    </admin>
+	<adminhtml>
+		<menu>
+	        <revechat translate="title" module="revechat">
+	   	        <title>REVE Chat</title>
+    	        <sort_order>1000</sort_order>
+            	<children>
+                	<accountconfig translate="title" module="revechat">
+    	                <title>Account Setup</title>
+                        <action>revechat/admin/accountconfig</action>
+        	            <sort_order>0</sort_order>
+            	    </accountconfig>
+    	        </children>
+        	</revechat>
+		</menu>
+    <acl>
+      <resources>
+        <admin>
+          <children>
+            <revechat translate="title" module="revechat">
+                <title>REVE Chat</title>
+                <sort_order>1000</sort_order>
+                <children>
+                    <accountconfig translate="title" module="revechat">
+                        <title>Account Setup</title>
+                        <action>revechat/admin/accountconfig</action>
+                        <sort_order>0</sort_order>
+                    </accountconfig>
+                </children>
+            </revechat>
+          </children>
+        </admin>
+      </resources>
+    </acl>
+	</adminhtml>
+</config>
