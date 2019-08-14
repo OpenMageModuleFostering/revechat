@@ -9,8 +9,16 @@ if (!isset($revechat_options)){
 <?php if($revechat_options['revechat_aid'] != null){
 
 	?>
-<script type='text/javascript'>
-    ;!function(){function e(){var e="<?php echo $revechat_options['revechat_aid']; ?>";new ReveChatWidget(e)}var t=document.createElement("script");t.readyState?t.onreadystatechange=function(){("loaded"===t.readyState||"complete"===t.readyState)&&(t.onreadystatechange=null,e())}:t.onload=function(){e()},t.src="https://static.revechat.com/client/scripts/configuration.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(t,a)}();
+ <!-- Start of REVE Chat Script-->
+ <script type='text/javascript'>
+ window.__revechat_account = window.__revechat_account || {};
+ window.__revechat_account = '<?php echo $revechat_options['revechat_aid']; ?>';
+ (function() { 
+   var rc = document.createElement('script'); rc.type = 'text/javascript'; rc.async = true;
+   rc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.revechat.com/widget/scripts/new-livechat.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(rc, s);
+})();
 </script>
+<!-- End of REVE Chat Script -->
 
 <?php } ?>
