@@ -71,7 +71,7 @@ ul#revechat_choose_form li label{
     margin-bottom: 30px;
     padding: 18px;
 }
-fieldset {
+#revechat-admin-settings-form fieldset {
   border: 1px solid #c0c0c0;
   margin-top: 20px;
 }

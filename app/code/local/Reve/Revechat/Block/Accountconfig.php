@@ -3,7 +3,7 @@
    define('REVECHAT_LOGIN_URL', REVECHAT_BASE_URL."plugins/login");
    define('REVECHAT_SIGNUP_URL', REVECHAT_BASE_URL."plugins/createTrialAccount");
    define('REVECHAT_GETACCOUNTDETAILS_URL', REVECHAT_BASE_URL."plugins/getAccountDetails");
-class Reve_ReveChat_Block_Accountconfig extends Mage_Core_Block_Template
+class Reve_Revechat_Block_Accountconfig extends Mage_Core_Block_Template
 {
 
    private $revechat_model;

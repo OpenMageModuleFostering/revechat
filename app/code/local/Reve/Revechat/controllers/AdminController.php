@@ -1,5 +1,5 @@
 <?php
-class Reve_ReveChat_AdminController extends Mage_Adminhtml_Controller_Action
+class Reve_Revechat_AdminController extends Mage_Adminhtml_Controller_Action
 {
 	public function accountconfigAction()
 	{

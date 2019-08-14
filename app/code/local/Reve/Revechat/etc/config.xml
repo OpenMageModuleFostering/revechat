@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Reve_ReveChat>
-            <version>0.1.0</version>
-        </Reve_ReveChat>
+        <Reve_Revechat>
+            <version>1.0.1</version>
+        </Reve_Revechat>
     </modules>
     <global>
         <models>
             <revechat>
-                <class>Reve_ReveChat_Model</class>
+                <class>Reve_Revechat_Model</class>
                 <resourceModel>revechat_mysql4</resourceModel>
             </revechat>
             <revechat_mysql4>
-                <class>Reve_ReveChat_Model_Mysql4</class>
+                <class>Reve_Revechat_Model_Mysql4</class>
                 <entities>
                     <revechat>
                         <table>revechat</table>
@@ -22,16 +22,16 @@
         </models>
         <blocks>
             <revechat>
-                <class>Reve_ReveChat_Block</class>
+                <class>Reve_Revechat_Block</class>
             </revechat>
         </blocks>
          <helpers>
-            <revechat><class>Reve_ReveChat_Helper</class></revechat>
+            <revechat><class>Reve_Revechat_Helper</class></revechat>
         </helpers>
         <resources>
             <revechat_setup>
                 <setup>
-                    <module>Reve_ReveChat</module>
+                    <module>Reve_Revechat</module>
                 </setup>
                 <connection>
                     <use>core_setup</use>
@@ -51,31 +51,31 @@
     </global>
     <frontend>
         <routers>
-            <Reve_ReveChat>
+            <Reve_Revechat>
                 <use>standard</use>
                 <args>
-                    <module>Reve_ReveChat</module>
+                    <module>Reve_Revechat</module>
                     <frontName>revechat</frontName>
                 </args>
-            </Reve_ReveChat>
+            </Reve_Revechat>
         </routers>
         <layout>
             <updates>
-                <Reve_ReveChat>
+                <Reve_Revechat>
                     <file>revechat.xml</file>
-                </Reve_ReveChat>
+                </Reve_Revechat>
             </updates>
         </layout>
      </frontend>
     <admin>
        <routers>
-            <Reve_ReveChat>
+            <Reve_Revechat>
                 <use>admin</use>
                 <args>
-                    <module>Reve_ReveChat</module>
+                    <module>Reve_Revechat</module>
                     <frontName>revechat</frontName>
                 </args>
-            </Reve_ReveChat>
+            </Reve_Revechat>
        </routers>
     </admin>
 	<adminhtml>

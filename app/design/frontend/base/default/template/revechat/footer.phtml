@@ -6,31 +6,11 @@ if (!isset($revechat_options)){
 }
 ?>
 
-<?php if($revechat_options['revechat_aid'] != null &&  $revechat_options['revechat_tracking_id'] !=null){
+<?php if($revechat_options['revechat_aid'] != null){
 
 	?>
-<script type='text/javascript'>  var url = "https://static.revechat.com/client/scripts/configuration.js";
-    var trackingID ="<?php echo $revechat_options['revechat_tracking_id']; ?>"
-    function initializeWidget(){
-        var aid="<?php echo $revechat_options['revechat_aid']; ?>";
-        new ReveChatWidget(aid);
-        var trackingID ="<?php echo $revechat_options['revechat_tracking_id']; ?>";}
-    (function loadSrc(src_url, onload_callback){
-        var script = document.createElement("script");
-        if(script.readyState){
-            script.onreadystatechange = function (){
-                if(script.readyState === "loaded" || script.readyState === "complete"){
-                    script.onreadystatechange = null
-                    onload_callback();}}
-        } else {
-            script.onload = function(){
-                onload_callback();
-            } }
-        script.src = src_url;
-        var first_script = document.getElementsByTagName("script")[0];
-        first_script.parentNode.insertBefore(script, first_script);
-    })(url, initializeWidget);
-    <!-- Add textArea code at every page in your website -->
+<script type='text/javascript'>
+    ;!function(){function e(){var e="<?php echo $revechat_options['revechat_aid']; ?>";new ReveChatWidget(e)}var t=document.createElement("script");t.readyState?t.onreadystatechange=function(){("loaded"===t.readyState||"complete"===t.readyState)&&(t.onreadystatechange=null,e())}:t.onload=function(){e()},t.src="https://static.revechat.com/client/scripts/configuration.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(t,a)}();
 </script>
 
 <?php } ?>

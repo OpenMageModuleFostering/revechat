@@ -1,5 +1,5 @@
 <?php
-class Reve_ReveChat_Model_Mysql4_ReveChat_Collection extends Varien_Data_Collection_Db
+class Reve_Revechat_Model_Mysql4_Revechat_Collection extends Varien_Data_Collection_Db
 {
     protected $_revechatTable;
  
