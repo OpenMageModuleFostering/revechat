@@ -32,7 +32,7 @@ jQuery.noConflict();
                   $('#revechat-admin-settings-form').submit(function(e)
                   {
                       //e.preventDefault();
-                      if (((parseInt($('input[name=revechat_aid]').val()) !== 0)&&(parseInt($('input[name=revechat_trackingid]').val()) !== 0)) || $('#has_revechat_account').is(':checked'))
+                      if (((parseInt($('input[name=revechat_aid]').val()) !== 0)) || $('#has_revechat_account').is(':checked'))
                       {
                           return ReveChat.alreadyHaveAccountForm();
                       }
@@ -48,7 +48,7 @@ jQuery.noConflict();
               {
                   if(this.validEmail())
                   {
-                      if((parseInt($('input[name=revechat_aid]').val()) == 0)||(parseInt($('input[name=revechat_trackingid]').val()) == 0))
+                      if((parseInt($('input[name=revechat_aid]').val()) == 0))
                       {
                           var login = $.trim($('#edit-revechat-account-email').val());
                           if(!login.length)
@@ -72,7 +72,6 @@ jQuery.noConflict();
                                   else
                                   {
                                       $('input[name=revechat_aid]').val(response.data.account_id);
-                                      $('input[name=revechat_trackingid]').val(response.data.tracking_id);
 
                                       $('#revechat-admin-settings-form').submit();
                                   }
@@ -91,7 +90,7 @@ jQuery.noConflict();
 
               newLicenseForm: function()
               {
-                  if (parseInt(($('input[name=revechat_aid]').val()) > 0) && parseInt(($('input[name=revechat_trackingid]').val()) > 0))
+                  if (parseInt(($('input[name=revechat_aid]').val()) > 0))
                   {
                       return true;
                   }
@@ -128,7 +127,7 @@ jQuery.noConflict();
                              $('#revechat-admin-settings-form').children('div').remove();
                               var message = '<div class="revechat_success_message">';
                               message += '<h3>Thank you for sigining up with REVE Chat</h3>';
-                              message += '<p>A verification link has been sent to your registered email address from <strong>noreply-support@revechat.com</strong>. Kindly verify your email to complete the signup process</p>';
+                              message += '<p>A verification link has been sent to your registered email address from <strong>support@revechat.com</strong>. Kindly verify your email to complete the signup process</p>';
                               message += '<p>Then come backe again to integrate REVE Chat in your website.</p>';
                               message += '</div>';
                               $(message).appendTo('#revechat-admin-settings-form');

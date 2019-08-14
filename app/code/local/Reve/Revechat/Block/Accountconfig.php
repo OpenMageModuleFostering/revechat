@@ -18,23 +18,20 @@ class Reve_Revechat_Block_Accountconfig extends Mage_Core_Block_Template
 
       if($this->getRequest()->getParam('revechat_remove')){
           $this->revechat_model->setRevechatAid("");
-          $this->revechat_model->setRevechatTrackingId("");
       }else
       {
-        if(($this->getRequest()->getParam('revechat_aid')!="") && $this->getRequest()->getParam('revechat_trackingid')!=""){
+        if(($this->getRequest()->getParam('revechat_aid')!=""))
+        {
          $revechat_aid = $this->getRequest()->getParam('revechat_aid');
-         $revechat_tracking_id = $this->getRequest()->getParam('revechat_trackingid');
-
 
          $this->revechat_model->setRevechatAid($revechat_aid);
-         $this->revechat_model->setRevechatTrackingId($revechat_tracking_id);
-      }
+        }
       }
 
       $this->revechat_model->save();
 
       $html = '<form action="'.$this->curpageurl().'" method="get" id="revechat-admin-settings-form">';
-      if(($this->revechat_model->getRevechatAid() == '' || $this->revechat_model->getRevechatAid() == '0') || ($this->revechat_model->getRevechatTrackingId() == '' || $this->revechat_model->getRevechatTrackingId() == '0')) {
+      if(($this->revechat_model->getRevechatAid() == '' || $this->revechat_model->getRevechatAid() == '0')) {
          $html .= '<div>
                     <div class="form-item form-type-item" id="edit-choose-form">
                         <h3>Already have a REVE Chat account?</h3>
@@ -60,7 +57,6 @@ class Reve_Revechat_Block_Accountconfig extends Mage_Core_Block_Template
                                 <input type="text" class="form-text" maxlength="128" size="60" value="" name="revechat_account_email" id="edit-revechat-account-email">
                             </div>
                             <input type="hidden" value="0" name="revechat_aid">
-                            <input type="hidden" value="0" name="revechat_trackingid">
                         </fieldset>
                     </div><!-- revechat_already_have -->
 
@@ -95,7 +91,6 @@ class Reve_Revechat_Block_Accountconfig extends Mage_Core_Block_Template
                     <div class="messages revechat_success">REVE Chat
                         is installed.</div>
                     <input type="hidden" name="revechat_aid">
-                    <input type="hidden" name="revechat_trackingid">
                     <div id="edit-actions" class="form-actions form-wrapper">
                         <input type="submit" class="form-submit" value="Remove" name="revechat_remove" id="edit-submit">
 
