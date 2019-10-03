@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/ReveChat",
+    "name": "OpenMageModuleFostering\/ReveChat",
     "type": "magento-module",
     "license": "GPL",
     "homepage": "",
     "description": "REVE Chat is powerful and intuitive real-time customer engagement tools.",
     "authors": [
-    {
-        "name": "REVE Chat",
-        "email": "product@revechat.com"
-    }
-],
+        {
+            "name": "REVE Chat",
+            "email": "product@revechat.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
